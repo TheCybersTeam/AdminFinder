@@ -1,0 +1,5 @@
+adm
+painel
+administrador
+login
+admin

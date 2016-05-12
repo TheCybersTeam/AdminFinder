@@ -4,32 +4,45 @@
 # Version: Beta 0.3
 
 import urllib as cybers
+import subprocess as sp
 import sys
+sp.call('cls',shell=True)
+header="""
+____ _              ___      _                     _____                      
+/__   \ |__   ___    / __\   _| |__   ___ _ __ ___  /__   \___  __ _ _ __ ___  
+  / /\/ '_ \ / _ \  / / | | | | '_ \ / _ \ '__/ __|   / /\/ _ \/ _` | '_ ` _ \ 
+ / /  | | | |  __/ / /__| |_| | |_) |  __/ |  \__ \  / / |  __/ (_| | | | | | |
+ \/   |_| |_|\___| \____/\__, |_.__/ \___|_|  |___/  \/   \___|\__,_|_| |_| |_|
+                         |___/                                                 
 
-print "_____ _              ___      _                     _____                      "
-print "/__   \ |__   ___    / __\   _| |__   ___ _ __ ___  /__   \___  __ _ _ __ ___  "
-print "  / /\/ '_ \ / _ \  / / | | | | '_ \ / _ \ '__/ __|   / /\/ _ \/ _` | '_ ` _ \ "
-print " / /  | | | |  __/ / /__| |_| | |_) |  __/ |  \__ \  / / |  __/ (_| | | | | | |"
-print " \/   |_| |_|\___| \____/\__, |_.__/ \___|_|  |___/  \/   \___|\__,_|_| |_| |_|"
-print "                         |___/                                                 Beta 0.3"
+More: https://www.facebook.com/TheCybersTeam
+Fast and easy admin finder hack tool Beta 0.3
+"""
+print header
 
-directories = ["adm", "painel", "administrador", "login", "admin"]
+wordlist = open('wordlist.txt', 'r')
 
-url = sys.argv[1]
+fail = "Fail, try it: \npython admin.py http://www.yourtarget.com.br"
+
+try:
+	url = sys.argv[1]
+except:
+	print fail
+	exit()
 
 try:
 	cybers.urlopen(url)
 	print "\nConection OK!"
 	print "Initializing the search...\n"
 except:
-	print "Fail, try it: \npython admin.py http://www.yourtarget.com.br"
+	print fail
 	exit()
 		
-for i in directories:
+for i in wordlist:
 	target = url + "/" + i
 	res = cybers.urlopen(target)
 
 	if res.getcode() == 200:
-		print "[+] " + target 
+		print "[+] " + target
 	else:
 		print "[-] " + target
