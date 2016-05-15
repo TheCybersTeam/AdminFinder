@@ -1,7 +1,8 @@
 # Facebook: https://www.facebook.com/TheCybersTeam
 # Group: 	https://www.facebook.com/groups/TheCybersTeam
 # Channel:  https://www.youtube.com/channel/UCKFMv1cifW55lKKps2thhbw
-# Version: Beta 0.4
+# Greatz:   Geolado
+# Version:  Beta 0.4
 
 import urllib as cybers
 import sys
