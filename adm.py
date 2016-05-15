@@ -4,9 +4,9 @@
 # Version: Beta 0.3
 
 import urllib as cybers
-import subprocess as sp
 import sys
-sp.call('cls',shell=True)
+import os
+os.system('cls')
 header="""
 ____ _              ___      _                     _____                      
 /__   \ |__   ___    / __\   _| |__   ___ _ __ ___  /__   \___  __ _ _ __ ___  
